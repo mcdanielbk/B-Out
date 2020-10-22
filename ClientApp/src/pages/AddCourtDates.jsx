@@ -3,6 +3,7 @@ import DatePicker from 'react-datepicker'
 import 'react-datepicker/dist/react-datepicker.css'
 //import './App.css'
 import { Header } from '../components/Header'
+import { useHistory } from 'react-router-dom'
 
 export function AddCourtDates() {
   const [selectedDate, setSelectedDate] = useState(null)
@@ -13,6 +14,8 @@ export function AddCourtDates() {
     courtRoom: '',
   })
 
+  const history = useHistory()
+
   function handleStringFieldChange(event) {
     const value = event.target.value
     const fieldName = event.target.name
@@ -21,10 +24,25 @@ export function AddCourtDates() {
 
     setNewCourtDate(updatedCourtDate)
   }
+
+  async function handleFormSubmit(event) {
+    event.preventDefault()
+
+    const response = await fetch('/api/CourtDates', {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify(newCourtDate),
+    })
+
+    const json = await response.json()
+
+    history.push('/CourtDates')
+  }
+
   return (
     <>
       <Header />
-      <form className="Add">
+      <form className="Add" onSubmit={handleFormSubmit}>
         <h1>Please enter your court Date.</h1>
         <h5>
           IF YOU HAVE RECEIVED A COURT DATE BEFORE WE HAD A CHANCE TO GIVE IT TO
@@ -71,6 +89,9 @@ export function AddCourtDates() {
             onChange={handleStringFieldChange}
           />
         </div>
+        <p>
+          <input type="submit" value="Submit"></input>
+        </p>
       </form>
     </>
   )

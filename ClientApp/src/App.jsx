@@ -37,7 +37,7 @@ export function App() {
         <Route exact path="/CHECK-IN" component={CheckIn}></Route>
         <Route exact path="/AddCourtDates" component={AddCourtDates}></Route>
         <Route exact path="/ALERT" component={Alert}></Route>
-        <Route exect path="/courtdate/:id" component={CourtDate}></Route>
+        <Route exact path="/courtdate/:id" component={CourtDate}></Route>
       </Switch>
     </>
   )

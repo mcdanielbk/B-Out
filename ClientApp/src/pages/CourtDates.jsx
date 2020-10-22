@@ -4,6 +4,7 @@ import { Calendar, momentLocalizer } from 'react-big-calendar'
 import moment from 'moment'
 import { Header } from '../components/Header'
 import { useHistory } from 'react-router-dom'
+import gavalicon from '../img/gavalicon.jpg'
 
 const localizer = momentLocalizer(moment)
 
@@ -33,8 +34,9 @@ export function CourtDates() {
           events={courtdates}
           startAccessor="when"
           endAccessor="when"
-          titleAccessor="caseNumber"
-          // titleAccessor={(event) => 'COURT'}
+          //titleAccessor="caseNumber"
+          titleAccessor={(event) => 'COURT'}
+          //titleAccessor={(event) => gavalicon}
           style={{ height: '75vh' }}
           onSelectEvent={function (calendarEvent, browserEvent) {
             history.push(`/courtdate/${calendarEvent.id}`)
