@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Identity;
 
 
 
-namespace B_out.Models
+namespace B_Out.Models
 {
     public class User
     {
