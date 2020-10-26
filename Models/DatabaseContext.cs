@@ -16,6 +16,11 @@ namespace B_Out.Models
         // Add database tables here
         public DbSet<CourtDate> CourtDates { get; set;}
         public DbSet<User> Users { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+{
+   modelBuilder.Entity<User>().HasIndex(user => user.Email) .IsUnique();
+}
         
         
         

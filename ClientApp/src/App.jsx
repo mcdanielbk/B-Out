@@ -7,6 +7,7 @@ import { CourtDates } from './pages/CourtDates'
 import { CheckIn } from './pages/CheckIn'
 import { AddCourtDates } from './pages/AddCourtDates'
 import { Alert } from './pages/Alert'
+import { SignUp } from './pages/SignUp'
 
 export function CourtDate() {
   const [courtDate, setCourtDate] = useState({
@@ -38,6 +39,7 @@ export function App() {
         <Route exact path="/AddCourtDates" component={AddCourtDates}></Route>
         <Route exact path="/ALERT" component={Alert}></Route>
         <Route exact path="/courtdate/:id" component={CourtDate}></Route>
+        <Route exact path="/SignUp/" component={SignUp}></Route>
       </Switch>
     </>
   )
