@@ -8,25 +8,31 @@ import { CheckIn } from './pages/CheckIn'
 import { AddCourtDates } from './pages/AddCourtDates'
 import { Alert } from './pages/Alert'
 import { SignUp } from './pages/SignUp'
+import axios from 'axios'
+import { SignIn } from './pages/SignIn'
 
 export function CourtDate() {
-  const [courtDate, setCourtDate] = useState({
-    when: '',
-    caseNumber: '',
-    charge: '',
-    courtRoom: '',
-  })
+  const [courtDate, setCourtDate] = useState([])
+
   const params = useParams()
   const id = params.id
 
   useEffect(() => {
+    axios
+      .get(`api/CourtDates/${id}`)
+      .then((response) => setCourtDate(response.data))
     // fetch to pull details of courtdate with id equal to `id`
     // Put that in state
     //show it below
     // setState(json)
   }, [id])
 
-  return <div>All about court date with id {id}</div>
+  return (
+    <div>
+      {id}
+      {courtDate.courtRoom}
+    </div>
+  )
 }
 
 export function App() {
@@ -40,6 +46,9 @@ export function App() {
         <Route exact path="/ALERT" component={Alert}></Route>
         <Route exact path="/courtdate/:id" component={CourtDate}></Route>
         <Route exact path="/SignUp/" component={SignUp}></Route>
+        <Route exact path="/signin">
+          <SignIn />
+        </Route>
       </Switch>
     </>
   )

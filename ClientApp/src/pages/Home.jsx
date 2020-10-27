@@ -13,6 +13,7 @@ export function Home() {
       <Header />
       <nav>
         <Link to="/signUp">Sign Up</Link>
+        <Link to="/signin">Sign In</Link>
       </nav>
 
       <main className="options">
