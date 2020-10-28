@@ -10,6 +10,7 @@ import { Alert } from './pages/Alert'
 import { SignUp } from './pages/SignUp'
 import axios from 'axios'
 import { SignIn } from './pages/SignIn'
+import { AdminAddDates } from './pages/AdminAddDate'
 
 export function CourtDate() {
   const [courtDate, setCourtDate] = useState([])
@@ -28,10 +29,20 @@ export function CourtDate() {
   }, [id])
 
   return (
-    <div>
-      {id}
-      {courtDate.courtRoom}
-    </div>
+    <>
+      <Header />
+      <article>
+        <ul>
+          <li>THE CASE NUMBER FOR THIS COURT DATE IS</li>
+          {courtDate.caseNumber}
+          <li>
+            THE CHARGE IN WHICH YOU WILL BE GOING TO COURT FOR THIS DAY IS{' '}
+          </li>
+          {courtDate.charge}
+          <li>THE COURT ROOM YOU SHOULD REPORT TO IS </li> {courtDate.courtRoom}
+        </ul>
+      </article>
+    </>
   )
 }
 
@@ -49,6 +60,7 @@ export function App() {
         <Route exact path="/signin">
           <SignIn />
         </Route>
+        <Route exact path="/AdminAddDate/" component={AdminAddDates}></Route>
       </Switch>
     </>
   )

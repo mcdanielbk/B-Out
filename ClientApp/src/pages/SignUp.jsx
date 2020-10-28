@@ -51,7 +51,7 @@ export function SignUp() {
           />
         </p>
         <p className="form-input">
-          <label htmlFor="name">Email </label>
+          <label htmlFor="email">Email </label>
           <input
             type="email"
             name="email"
@@ -65,7 +65,7 @@ export function SignUp() {
             type="password"
             name="password"
             value={newUser.password}
-            onChange={handleFormSubmit}
+            onChange={handleStringFieldChange}
           />
         </p>
         <p>

@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { recordAuthentication } from '../auth'
+import bars from '../img/bars.jpg'
 
 export function SignIn() {
   const [errorMessage, setErrorMessage] = useState()
@@ -44,32 +45,36 @@ export function SignIn() {
         <a href="/">
           <i></i>
         </a>
-        <h2> Sign In</h2>
       </nav>
-      <form onSubmit={handleFormSubmit}>
-        {errorMessage && <p>{errorMessage}</p>}
-        <p className="form-input">
-          <label> Email</label>
-          <input
-            type="email"
-            name="email"
-            value={user.email}
-            onChange={handleStringFieldChange}
-          />
-        </p>
-        <p className="form-input">
-          <label htmlFor="password">Password</label>
-          <input
-            type="password"
-            name="password"
-            value={user.password}
-            onChange={handleStringFieldChange}
-          />
-        </p>
-        <p>
-          <input type="submit" value="Submit" />
-        </p>
-      </form>
+      <section className="sign-body">
+        <h1>LOG-IN</h1>
+        <div className="login-box">
+          <form className="full" onSubmit={handleFormSubmit}>
+            {errorMessage && <p>{errorMessage}</p>}
+            <h1>LOG-IN</h1>
+            <div className="form-input">
+              <input
+                type="email"
+                name="email"
+                placeholder="Email"
+                value={user.email}
+                onChange={handleStringFieldChange}
+              />
+            </div>
+            <div className="form-input">
+              <input
+                type="password"
+                name="password"
+                placeholder="Password"
+                value={user.password}
+                onChange={handleStringFieldChange}
+              />
+            </div>
+
+            <input type="submit" value="Submit" />
+          </form>
+        </div>
+      </section>
     </>
   )
 }

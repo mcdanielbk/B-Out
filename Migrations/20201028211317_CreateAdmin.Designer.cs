@@ -10,8 +10,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace BOut.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20201026010201_AddUserEmailIndex")]
-    partial class AddUserEmailIndex
+    [Migration("20201028211317_CreateAdmin")]
+    partial class CreateAdmin
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -62,6 +62,9 @@ namespace BOut.Migrations
 
                     b.Property<string>("HashedPassword")
                         .HasColumnType("text");
+
+                    b.Property<bool>("isAdmin")
+                        .HasColumnType("boolean");
 
                     b.HasKey("Id");
 

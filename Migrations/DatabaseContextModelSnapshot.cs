@@ -61,6 +61,9 @@ namespace BOut.Migrations
                     b.Property<string>("HashedPassword")
                         .HasColumnType("text");
 
+                    b.Property<bool>("isAdmin")
+                        .HasColumnType("boolean");
+
                     b.HasKey("Id");
 
                     b.HasIndex("Email")

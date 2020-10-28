@@ -5,15 +5,18 @@ import Court from '../img/court.jpg'
 import CheckIn from '../img/CheckIn.jpg'
 import lawyer from '../img/lawyer.png'
 import arrested from '../img/arrested.jpg'
+import { isLoggedIn } from '../auth'
 //import { signUp } from '../components/signUp'
+import bars from '../img/bars.jpg'
 
 export function Home() {
   return (
     <>
       <Header />
-      <nav>
-        <Link to="/signUp">Sign Up</Link>
-        <Link to="/signin">Sign In</Link>
+      <nav className="navBar">
+        {isLoggedIn() || <Link to="/signin">Sign In</Link>}
+        <br />
+        {isLoggedIn() || <Link to="/signUp">Sign Up</Link>}
       </nav>
 
       <main className="options">

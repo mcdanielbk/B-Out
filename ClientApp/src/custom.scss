@@ -12,6 +12,8 @@ html {
   margin-top: 50px;
   display: flex;
   justify-content: space-around;
+  background-image: url(./img/bars.jpg);
+  background-size: cover;
 }
 
 button {
@@ -32,6 +34,7 @@ button {
 img {
   width: 13.5em;
   height: 18em;
+  border-radius: 25px;
 }
 
 body {
@@ -90,4 +93,39 @@ header {
   align-items: center;
   justify-items: center;
   justify-content: center;
+}
+
+.navBar {
+  display: flex;
+  justify-content: space-around;
+}
+.full {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #4e4c4c;
+}
+.login-box {
+  width: 280px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+.form-input {
+  width: 100%;
+  overflow: hidden;
+  font-size: 20px;
+  padding: 8px 0;
+  margin: 8px 0;
+  border-bottom: 1px solid black;
+}
+
+.sign-body {
+  background-image: url(./img/bars.jpg);
+  height: 100vh;
 }

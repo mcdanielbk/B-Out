@@ -1,12 +1,11 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react'
+import { Link } from 'react-router-dom'
 export function Header() {
   return (
     <header>
       <ul>
         <li>Welcome Back Name</li>
-        <li className="logo">
-        </li>
+        <li className="logo"></li>
         <li>
           <Link to="/">HOME</Link>
         </li>
@@ -22,11 +21,10 @@ export function Header() {
         <li>
           <Link to="/ALERT">ALERT</Link>
         </li>
+        <li>
+          <Link to="/AdminAddDate">ADMIN</Link>
+        </li>
       </ul>
     </header>
-    
-
-  );
-
+  )
 }
-

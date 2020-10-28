@@ -8,6 +8,7 @@ namespace B_Out.Models
 {
     public class User
     {
+    
         public int Id { get; set; }
         [Required]
         public string FullName { get; set; }
@@ -17,6 +18,7 @@ namespace B_Out.Models
         public string HashedPassword { get; set; }
         // Define a property for being able to _set_ a password
         public string Password
+        
         {
             // Define only the `set` aspect of the property
             set
@@ -34,5 +36,8 @@ namespace B_Out.Models
             // Return True if the verification was a success
             return passwordVerification == PasswordVerificationResult.Success;
         }
+
+        public bool isAdmin { get; set; } = false;
+
     }
 }
