@@ -41,6 +41,7 @@ export function AdminAddDates() {
   }
 
   const user = getUser()
+  console.log(user)
   if (user.isAdmin && getUserId() !== undefined) {
     return (
       <>

@@ -4,8 +4,6 @@ export function Header() {
   return (
     <header>
       <ul>
-        <li>Welcome Back Name</li>
-        <li className="logo"></li>
         <li>
           <Link to="/">HOME</Link>
         </li>
@@ -15,6 +13,8 @@ export function Header() {
         <li>
           <Link to="/CHECK-IN">CHECK-IN</Link>
         </li>
+      </ul>
+      <ul>
         <li>
           <Link to="/AddCourtDates">ADD A COURT DATE</Link>
         </li>

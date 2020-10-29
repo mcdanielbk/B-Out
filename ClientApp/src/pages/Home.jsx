@@ -5,9 +5,15 @@ import Court from '../img/court.jpg'
 import CheckIn from '../img/CheckIn.jpg'
 import lawyer from '../img/lawyer.png'
 import arrested from '../img/arrested.jpg'
-import { isLoggedIn } from '../auth'
+import { isLoggedIn, logout } from '../auth'
 //import { signUp } from '../components/signUp'
 import bars from '../img/bars.jpg'
+
+function handleLogout() {
+  logout()
+
+  window.location.assign('/')
+}
 
 export function Home() {
   return (
@@ -17,6 +23,12 @@ export function Home() {
         {isLoggedIn() || <Link to="/signin">Sign In</Link>}
         <br />
         {isLoggedIn() || <Link to="/signUp">Sign Up</Link>}
+        <br />
+        {isLoggedIn() && (
+          <span className="link" onClick={handleLogout}>
+            Sign out
+          </span>
+        )}
       </nav>
 
       <main className="options">

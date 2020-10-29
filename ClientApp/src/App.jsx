@@ -11,6 +11,7 @@ import { SignUp } from './pages/SignUp'
 import axios from 'axios'
 import { SignIn } from './pages/SignIn'
 import { AdminAddDates } from './pages/AdminAddDate'
+import { logout } from './auth'
 
 export function CourtDate() {
   const [courtDate, setCourtDate] = useState([])

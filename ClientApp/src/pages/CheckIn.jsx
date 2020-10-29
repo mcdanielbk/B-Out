@@ -13,40 +13,42 @@ export function CheckIn() {
   return (
     <>
       <Header />
-      <h1>WEEKLY CHECK-IN</h1>
-      <form onSubmit={handleSubmitForm}>
-        <div>
-          <h2>Question</h2>
-          <input type="radio" />
-          <label>NO</label>
-          <input type="radio" />
-          <label>YES</label>
-        </div>
-        <div>
-          <h2>Question</h2>
-          <input type="radio" />
-          <label>NO</label>
-          <input type="radio" />
-          <label>YES</label>
-        </div>
-        <div>
-          <h2>Question</h2>
-          <input type="radio" />
-          <label>NO</label>
-          <input type="radio" />
-          <label>YES</label>
-        </div>
-        <div>
-          <h2>Question</h2>
-          <input type="radio" />
-          <label>NO</label>
-          <input type="radio" />
-          <label>YES</label>
-        </div>
-        <p>
-          <input type="submit" value="Submit" />
-        </p>
-      </form>
+      <section className="list">
+        <form onSubmit={handleSubmitForm}>
+          <h1>WEEKLY CHECK-IN</h1>
+          <div>
+            <h2>Question</h2>
+            <input type="radio" />
+            <label>NO</label>
+            <input type="radio" />
+            <label>YES</label>
+          </div>
+          <div>
+            <h2>Question</h2>
+            <input type="radio" />
+            <label>NO</label>
+            <input type="radio" />
+            <label>YES</label>
+          </div>
+          <div>
+            <h2>Question</h2>
+            <input type="radio" />
+            <label>NO</label>
+            <input type="radio" />
+            <label>YES</label>
+          </div>
+          <div>
+            <h2>Question</h2>
+            <input type="radio" />
+            <label>NO</label>
+            <input type="radio" />
+            <label>YES</label>
+          </div>
+          <p>
+            <input type="submit" value="Submit" />
+          </p>
+        </form>
+      </section>
     </>
   )
 }

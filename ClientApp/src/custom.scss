@@ -13,6 +13,7 @@ html {
   display: flex;
   justify-content: space-around;
   background-image: url(./img/bars.jpg);
+  height: 100vh;
   background-size: cover;
 }
 
@@ -128,4 +129,52 @@ header {
 .sign-body {
   background-image: url(./img/bars.jpg);
   height: 100vh;
+}
+
+.list {
+  width: 340px;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: rgb(10, 10, 10);
+  border-style: double;
+}
+
+header {
+  display: flex;
+  justify-content: space-around;
+}
+
+.fields {
+  display: flex;
+  flex-wrap: wrap;
+  width: 280px;
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: rgb(143, 138, 135);
+  border-radius: 3em;
+  border-width: 6em;
+  border-style: dashed;
+}
+.fields input {
+  width: 100%;
+  overflow: hidden;
+  font-size: 20px;
+  padding: 8px 0;
+  margin: 8px 0;
+  border-color: black;
+}
+.Add {
+  background-color: rgb(10, 10, 10);
+  height: 100vh;
+}
+.Add h1 {
+  color: white;
+}
+
+.options h3 {
+  color: white;
 }
