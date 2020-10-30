@@ -38,6 +38,8 @@ namespace B_Out.Controllers
             return await _context.CourtDates.OrderBy(row => row.Id).ToListAsync();
         }
 
+       
+
         // GET: api/CourtDates/5
         //
         // Fetches and returns a specific courtDate by finding it by id. The id is specified in the

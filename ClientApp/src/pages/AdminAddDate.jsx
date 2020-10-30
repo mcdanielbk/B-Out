@@ -5,6 +5,7 @@ import 'react-datepicker/dist/react-datepicker.css'
 import { Header } from '../components/Header'
 import { useHistory } from 'react-router-dom'
 import { getUser, getUserId } from '../auth'
+import { useEffect } from 'react'
 
 export function AdminAddDates() {
   const [selectedDate, setSelectedDate] = useState(null)
@@ -14,6 +15,17 @@ export function AdminAddDates() {
     charge: '',
     courtRoom: '',
   })
+  const [userList, setUserList] = useState([])
+
+  useEffect(() => {
+    fetch('/api/Users')
+      .then((response) => {
+        return response.json()
+      })
+      .then((apiData) => {
+        setUserList(apiData)
+      })
+  }, [])
 
   const history = useHistory()
 
@@ -36,21 +48,41 @@ export function AdminAddDates() {
     })
 
     const json = await response.json()
-
+    console.log(json)
     history.push('/CourtDates')
   }
-
   const user = getUser()
+
+  console.log(user.isAdmin)
+
   console.log(user)
   if (user.isAdmin && getUserId() !== undefined) {
     return (
       <>
         <Header />
-        <form className="Add" onSubmit={handleFormSubmit}>
+        <form className="adminAdd" onSubmit={handleFormSubmit}>
           <h5>
             IF YOU HAVE RECEIVED A COURT DATE BEFORE WE HAD A CHANCE TO GIVE IT
             TO YOU PLEASE ENTER IT HERE
           </h5>
+          <div>
+            <label>Select User</label>
+            <select>
+              {userList ? (
+                userList.map((user, key) => {
+                  return (
+                    <option key={key} value={user.id}>
+                      {user.fullName}
+                    </option>
+                  )
+                })
+              ) : (
+                <ul>
+                  <li>Loading...</li>
+                </ul>
+              )}
+            </select>
+          </div>
           <div className="date">
             <label>Select a court date: </label>
             <DatePicker
@@ -93,7 +125,7 @@ export function AdminAddDates() {
             />
           </div>
           <p>
-            <input type="submit" value="Submit"></input>
+            <input type="submit" value="Submit" />
           </p>
         </form>
       </>

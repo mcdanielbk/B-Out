@@ -32,16 +32,17 @@ export function CourtDate() {
   return (
     <>
       <Header />
-      <article>
-        <ul>
-          <li>THE CASE NUMBER FOR THIS COURT DATE IS</li>
-          {courtDate.caseNumber}
-          <li>
+      <article className="details">
+        <div className="results">
+          <div>THE CASE NUMBER FOR THIS COURT DATE IS</div>
+          <p>{courtDate.caseNumber}</p>
+          <div>
             THE CHARGE IN WHICH YOU WILL BE GOING TO COURT FOR THIS DAY IS{' '}
-          </li>
-          {courtDate.charge}
-          <li>THE COURT ROOM YOU SHOULD REPORT TO IS </li> {courtDate.courtRoom}
-        </ul>
+          </div>
+          <p>{courtDate.charge}</p>
+          <div>THE COURT ROOM YOU SHOULD REPORT TO IS </div>{' '}
+          <p>{courtDate.courtRoom}</p>
+        </div>
       </article>
     </>
   )

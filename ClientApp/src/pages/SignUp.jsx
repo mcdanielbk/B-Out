@@ -39,39 +39,41 @@ export function SignUp() {
 
   return (
     <>
-      <form onSubmit={handleFormSubmit}>
-        {errorMessage && <p>{errorMessage}</p>}
-        <p className="form-input">
-          <label htmlFor="name">Name </label>
-          <input
-            type="text"
-            name="fullName"
-            value={newUser.fullName}
-            onChange={handleStringFieldChange}
-          />
-        </p>
-        <p className="form-input">
-          <label htmlFor="email">Email </label>
-          <input
-            type="email"
-            name="email"
-            value={newUser.email}
-            onChange={handleStringFieldChange}
-          />
-        </p>
-        <p className="form-input">
-          <label htmlFor="password">Password </label>
-          <input
-            type="password"
-            name="password"
-            value={newUser.password}
-            onChange={handleStringFieldChange}
-          />
-        </p>
-        <p>
-          <input type="submit" value="Submit" />
-        </p>
-      </form>
+      <main className="sign-Back">
+        <form className="up" onSubmit={handleFormSubmit}>
+          {errorMessage && <p>{errorMessage}</p>}
+          <p className="form-input">
+            <label htmlFor="name">Name </label>
+            <input
+              type="text"
+              name="fullName"
+              value={newUser.fullName}
+              onChange={handleStringFieldChange}
+            />
+          </p>
+          <p className="form-input">
+            <label htmlFor="email">Email </label>
+            <input
+              type="email"
+              name="email"
+              value={newUser.email}
+              onChange={handleStringFieldChange}
+            />
+          </p>
+          <p className="form-input">
+            <label htmlFor="password">Password </label>
+            <input
+              type="password"
+              name="password"
+              value={newUser.password}
+              onChange={handleStringFieldChange}
+            />
+          </p>
+          <p>
+            <input type="submit" value="Submit" />
+          </p>
+        </form>
+      </main>
     </>
   )
 }

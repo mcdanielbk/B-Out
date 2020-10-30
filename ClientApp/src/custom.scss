@@ -74,6 +74,13 @@ header {
   height: 100vh;
 }
 
+.alertmain input {
+  background-image: url(./img/runninman.jpg);
+  background-size: 15em;
+  background-repeat: no-repeat;
+  margin-left: 40vw;
+}
+
 .gps {
   border: black;
   border-style: double;
@@ -177,4 +184,48 @@ header {
 
 .options h3 {
   color: white;
+}
+
+.results {
+  width: 280px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -10%);
+  color: black;
+  background-color: transparentize($color: #f1ebeb, $amount: 0);
+  border-radius: 15px;
+  padding: 10px;
+}
+
+.details {
+  background-image: url(./img/court.jpg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  height: 100vw;
+}
+
+.results p {
+  background-color: white;
+  font-weight: bold;
+}
+
+.up {
+  width: 280px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  background-color: #0e0909;
+}
+
+.sign-Back {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background-image: url(./img/bars.jpg);
+  height: 100vh;
 }
